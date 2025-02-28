@@ -19,6 +19,11 @@ function get_source_from_cookies() {
         return null
     };
 
+    let medium = source_medium.split('/')[1].trim();
+    if (medium != "cpc") {
+        return null
+    };
+
     let source_name = source_medium.split('/')[0].trim();
     let source = sources[source_name] || sources["other"];
 
