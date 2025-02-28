@@ -1,3 +1,10 @@
+// Этот код добавляет источник трафика в приветственное сообщение WhatsApp на странице /party.
+
+// get_source_from_cookies() – получает источник трафика из cookie (source_medium) и преобразует его в читаемый формат (Instagram, Google, Facebook).
+// create_msg_with_source() – формирует текст сообщения WhatsApp, добавляя источник трафика, если он известен.
+// update_wa_text(link) – обновляет параметр text в ссылке на WhatsApp, заменяя его на сформированное сообщение.
+// На загрузке страницы (DOMContentLoaded) – если URL содержит /party, находит все ссылки на WhatsApp и обновляет их текст.
+
 function get_source_from_cookies() {
     // Формирует код для разметки источника трафика по шаблону:
     const sources = {
