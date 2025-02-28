@@ -1,0 +1,52 @@
+function get_source_from_cookies() {
+    // Формирует код для разметки источника трафика по шаблону:
+    const sources = {
+        "instagram": "Instagram",
+        "google": "Google",
+        "facebook": "Facebook",
+        "other": null,
+    };
+
+    let source_medium = getCookie_('source_medium')
+    if (!source_medium) {
+        return null
+    };
+
+    let source_name = source_medium.split('/')[0].trim();
+    let source = sources[source_name] || sources["other"];
+
+    return source
+};
+
+function create_msg_with_source() {
+    // Формирует текст приветственного сообщение для вацапа
+    source = get_source_from_cookies()
+
+    if (!source) {
+        return "Hello, I want to book a party!"
+    };
+
+    return `Hello! I saw your ad in [${source}]. I want to book a party.`
+};
+
+function update_wa_text(link) {
+    let url = new URL(link.href);
+    let params = new URLSearchParams(url.search);
+    let new_text = create_msg_with_source()
+
+    if (params.has("text")) {
+        params.set("text", new_text);
+    } else {
+        params.append("text", new_text);
+    }
+
+    link.href = url.origin + url.pathname + "?" + params.toString();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname === "/party") {
+        document.querySelectorAll("a[href^='https://api.whatsapp.com/send/?phone=']").forEach(link => {
+            update_wa_text(link)
+        });
+    }
+});
