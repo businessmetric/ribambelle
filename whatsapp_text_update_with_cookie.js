@@ -38,7 +38,7 @@ function create_msg_with_source() {
         return "Hello, I want to book a party!"
     };
 
-    return `Hello! I saw your ad in [${source}]. I want to book a party.`
+    return `Hello! I saw your ad in ${source}. I want to book a party.`
 };
 
 function update_wa_text(link) {
