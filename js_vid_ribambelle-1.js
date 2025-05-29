@@ -1,4 +1,3 @@
-<script>
 /**
  * Генерирует случайный ID из 7 символов (буквы и цифры)
  * @param {number} length - Длина ID (по умолчанию 7)
@@ -78,4 +77,3 @@ function getOrCreateVeeneoId() {
     // Для отладки - выводим в консоль
     console.log('Veeneo ID:', veeneoId);
 })();
-</script>
