@@ -19,7 +19,7 @@ links.forEach(link => {
                 const newUrl = `https://widget.servmeco.com/?oid=1574&source=venue_website&vid=${encodeURIComponent(veeneo_id)}`;
                 // открываем в новой вкладке
                 window.open(newUrl, '_blank');
-                 // link.removeAttribute('href');
+                 link.removeAttribute('href');
             } else {                console.log('Кука veeneo_id не найдена.');
             }
         });
