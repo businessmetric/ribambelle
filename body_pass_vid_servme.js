@@ -1,4 +1,4 @@
-/* DISABLE_START
+
 function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
         "(?:^|; )" + name.replace(/([\.$?*|{}$$$$$$$$\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -26,4 +26,4 @@ links.forEach(link => {
         });
     }
 });
-DISABLE_END */
+
