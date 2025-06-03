@@ -8,10 +8,10 @@ function getCookie(name) {
 
 // Обрабатываем все ссылки, которые нужно изменить
 const links = document.querySelectorAll('a');
-
 links.forEach(link => {
     const href = link.getAttribute('href');
     if (href && href.includes('widget.servmeco.com')) {
+          console.log(link)
         link.addEventListener('click', function(event) {
             event.preventDefault(); // отменяем стандартное поведение ссылки
 
