@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function getCookie(name) {
+ console.log('start')  
+ function getCookie(name) {
         let matches = document.cookie.match(new RegExp(
             "(?:^|; )" + name.replace(/([\.$?*|{}\\\+\^])/g, '\\$1') + "=([^;]*)"
         ));
@@ -13,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (href && href.includes('widget.servmeco.com')) {
             const veeneo_id = getCookie('veeneo_id');
             if (typeof veeneo_id !== "undefined") {
-                const newUrl = `https://widget.servmeco.com/?oid=1574&source=venue_website&vid=${encodeURIComponent(veeneo_id)}`;
+                // Проверяем, есть ли уже параметры в URL
+                const separator = href.includes('?') ? '&' : '?';
+                const newUrl = `${href}${separator}vid=${encodeURIComponent(veeneo_id)}`;
                 // изменяем href
                 link.setAttribute('href', newUrl);
                 // добавляем атрибут target="_blank" для открытия в новой вкладке
@@ -24,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 
 
 
