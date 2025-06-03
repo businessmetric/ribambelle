@@ -1,3 +1,4 @@
+console.log('start')
 // document.addEventListener('DOMContentLoaded', function() {
 //  console.log('start')  
 //  function getCookie(name) {
