@@ -8,6 +8,7 @@ function getCookie(name) {
 
 // Обрабатываем все ссылки, которые нужно изменить
 const links = document.querySelectorAll('a');
+console.log(links)
 links.forEach(link => {
   
     const href = link.getAttribute('href');
