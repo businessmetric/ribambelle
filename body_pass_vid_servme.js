@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     links.forEach(link => {
         const href = link.getAttribute('href');
         if (href && href.includes('widget.servmeco.com')) {
-         console.log(link)
+         console.log(link)   // удалить эти логи после полной приемки кода, нужны для тестов разработчика
             const veeneo_id = getCookie('veeneo_id');
             if (typeof veeneo_id !== "undefined") {
                 // Проверяем, есть ли уже параметры в URL
