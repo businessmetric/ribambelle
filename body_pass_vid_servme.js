@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (typeof veeneo_id !== "undefined") {
                 // Проверяем, есть ли уже параметры в URL
                 const separator = href.includes('?') ? '&' : '?';
-                const newUrl = `${href}${separator}vid=${encodeURIComponent(veeneo_id)}`;
+                const newUrl = `${href}${separator}vid_widget_meta=${encodeURIComponent(veeneo_id)}`;
                 // изменяем href
                 link.setAttribute('href', newUrl);
                 // добавляем атрибут target="_blank" для открытия в новой вкладке
